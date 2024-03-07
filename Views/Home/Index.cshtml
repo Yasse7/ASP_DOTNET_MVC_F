@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using First_MVC_APP.Models
+
+ @model List<First_MVC_APP.Models.Product>
+
+<div class="text-center">
+   
+
+
+    <h1 class="display-4">Welcome</h1>
+
+    <h1>Total Products: @ViewBag.TotalProducts</h1>
+
+    @if (Model != null)
+    {
+        <ul>
+            @foreach (var product in Model)
+            {
+                <li>@product.Name - @product.Description - @product.Price</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No products available.</p>
+    }
+    
+</div>
